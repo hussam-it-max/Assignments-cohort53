@@ -1,1 +1,29 @@
 /* Write your style here */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+h1{
+  margin:20px 50px;
+}
+
+
+li {
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 8px;
+  align-items: center;
+  
+}
+
+img {
+  border-radius: 5px;
+  height: 200px;
+  width:100%;
+}
+
+

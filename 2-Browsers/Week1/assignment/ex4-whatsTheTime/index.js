@@ -8,6 +8,22 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 ------------------------------------------------------------------------------*/
 function addCurrentTime() {
   // TODO complete this function
-}
+  const time=document.createElement('h3');
+  time.classList.add('clock');
+   document.body.appendChild(time);
+
+  function updateTime(){
+  const date=new Date();
+  const hours=date.getHours();
+  const minutes=date.getMinutes();
+  const seconds=date.getSeconds();
+  const currentTime=`${hours>=10?hours:0+hours}:${minutes>=10? minutes:0+minutes}:${seconds>=10?seconds:0+seconds}${hours>12?'PM':'AM'}`;
+  console.log(currentTime);
+  time.textContent=`${currentTime}`;
+  };
+  updateTime();
+  setInterval(updateTime,1000);
+};
+window.addEventListener('load',addCurrentTime );
 
 // TODO execute `addCurrentTime` when the browser has completed loading the page
