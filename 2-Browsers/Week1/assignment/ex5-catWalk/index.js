@@ -23,14 +23,39 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 function catWalk() {
   const image=document.querySelector('img');
   image.style.position='relative';
+    const maxwidth=window.innerWidth;
+    const halfWidth=maxwidth/2;
+    const catWidth=image.width;
+    const orginalSrc=image.src;
+    let hasChanged = false;
+    const tempsrc="https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
+  let start=0;
   image.style.left='0px';
-  function setSteps(){
-    let value=Number(image.style.left);
-    value+=10;
-    image.style.left=`${value}`
+  function setSteps(e){
+    start+=100;
+     image.style.left=`${start}px`;
+     console.log(image.style.left);
+
+      if(start+catWidth>= maxwidth){
+      start=0;
+      hasChanged=false;
+    };
+
+    if(!hasChanged&&start+catWidth>=halfWidth){
+      image.src=tempsrc;
+      hasChanged=true;
+      setTimeout(() => {
+        image.src = orginalSrc;
+      },1000)}
+    
+   
+
+ 
+  
+  
 
   };
-  setSteps();
+  setInterval(setSteps,1000);
 
 
 
