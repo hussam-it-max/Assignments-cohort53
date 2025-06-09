@@ -59,18 +59,7 @@ function main() {
       isbn: '978-0201616224',
       alreadyRead: true,
     },
-     {
-      title: 'The Pragmatic Programmer',
-      author: 'Andrew Hunt',
-      isbn: '978-0201616224',
-      alreadyRead: true,
-    },
-     {
-      title: 'The Pragmatic Programmer',
-      author: 'Andrew Hunt',
-      isbn: '978-0201616224',
-      alreadyRead: true,
-    },
+
   ];
 
   const ulElement = createBookList(myBooks);

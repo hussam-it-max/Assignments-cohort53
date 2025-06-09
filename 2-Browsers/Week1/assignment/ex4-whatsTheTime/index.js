@@ -7,7 +7,6 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 2. Have the function execute when it's loading in the browser.
 ------------------------------------------------------------------------------*/
 function addCurrentTime() {
-  // TODO complete this function
   const time=document.createElement('h3');
   time.classList.add('clock');
    document.body.appendChild(time);
@@ -26,4 +25,4 @@ function addCurrentTime() {
 };
 window.addEventListener('load',addCurrentTime );
 
-// TODO execute `addCurrentTime` when the browser has completed loading the page
+

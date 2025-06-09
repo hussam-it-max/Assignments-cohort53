@@ -20,47 +20,45 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
+const image = document.querySelector('img');
+image.style.position = 'absolute';
+image.style.left = '0px';
+
+const originalSrc = image.src;
+const dancingCat = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
+
+let hasChanged = false;
+
 function catWalk() {
-  const image=document.querySelector('img');
-  image.style.position='relative';
-    const maxwidth=window.innerWidth;
-    const halfWidth=maxwidth/2;
-    const catWidth=image.width;
-    const orginalSrc=image.src;
-    let hasChanged = false;
-    const tempsrc="https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
-  let start=0;
-  image.style.left='0px';
-  function setSteps(e){
-    start+=100;
-     image.style.left=`${start}px`;
-     console.log(image.style.left);
+  let currentLeft = parseInt(image.style.left, 10);
+  const catWidth = image.width;
+  const windowWidth = window.innerWidth;
 
-      if(start+catWidth>= maxwidth){
-      start=0;
-      hasChanged=false;
-    };
 
-    if(!hasChanged&&start+catWidth>=halfWidth){
-      image.src=tempsrc;
-      hasChanged=true;
-      setTimeout(() => {
-        image.src = orginalSrc;
-      },1000)}
-    
-   
+  if (currentLeft + catWidth >= windowWidth) {
+    image.style.left = '0px';
+    hasChanged = false;
+    return;
+  }
 
  
-  
-  
+  const middle = (windowWidth / 2) - (catWidth / 2);
+  if (!hasChanged && currentLeft >= middle) {
+    hasChanged = true;
 
-  };
-  setInterval(setSteps,1000);
+    image.src = dancingCat;
+    clearInterval(timer); 
 
+    setTimeout(() => {
+      image.src = originalSrc;
+      timer = setInterval(catWalk, 50);
+    }, 5000);
 
+    return;
+  }
 
+ 
+  image.style.left = (currentLeft + 10) + 'px';
 }
 
-
-window.addEventListener('load', catWalk);
-
+let timer = setInterval(catWalk, 50);
