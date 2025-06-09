@@ -25,7 +25,8 @@ image.style.position = 'absolute';
 image.style.left = '0px';
 
 const originalSrc = image.src;
-const dancingCat = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
+const dancingCat =
+  'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
 
 let hasChanged = false;
 
@@ -34,20 +35,18 @@ function catWalk() {
   const catWidth = image.width;
   const windowWidth = window.innerWidth;
 
-
   if (currentLeft + catWidth >= windowWidth) {
     image.style.left = '0px';
     hasChanged = false;
     return;
   }
 
- 
-  const middle = (windowWidth / 2) - (catWidth / 2);
+  const middle = windowWidth / 2 - catWidth / 2;
   if (!hasChanged && currentLeft >= middle) {
     hasChanged = true;
 
     image.src = dancingCat;
-    clearInterval(timer); 
+    clearInterval(timer);
 
     setTimeout(() => {
       image.src = originalSrc;
@@ -57,8 +56,11 @@ function catWalk() {
     return;
   }
 
- 
-  image.style.left = (currentLeft + 10) + 'px';
+  image.style.left = currentLeft + 10 + 'px';
 }
 
-let timer = setInterval(catWalk, 50);
+let timer;
+
+window.addEventListener('load', () => {
+  timer = setInterval(catWalk, 50);
+});

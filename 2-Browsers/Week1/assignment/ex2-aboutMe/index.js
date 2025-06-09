@@ -8,14 +8,11 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 3. Look in the css file!
 ------------------------------------------------------------------------------*/
 
-
-document.querySelector('#nickname').textContent='Sam';
-document.querySelector('#fav-food').textContent='Pizza';
-document.querySelector('#hometown').textContent='Niewe-Vennep';
-const ul=document.querySelector('ul');
-liCollection=document.querySelectorAll('ul li');
-for(let li of liCollection){
+document.querySelector('#nickname').textContent = 'Sam';
+document.querySelector('#fav-food').textContent = 'Pizza';
+document.querySelector('#hometown').textContent = 'Nieuw-Vennep';
+const ul = document.querySelector('ul');
+liCollection = document.querySelectorAll('ul li');
+for (let li of liCollection) {
   li.classList.add('list-item');
-
-  
 }

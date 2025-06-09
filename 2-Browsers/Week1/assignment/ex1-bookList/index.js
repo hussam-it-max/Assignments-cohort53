@@ -18,25 +18,23 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 //cspell: enable
 
 function createBookList(books) {
-  const ulElement=document.createElement('ul');
- // ulElement.id='GroupBooks';
+  const ulElement = document.createElement('ul');
+  // ulElement.id='GroupBooks';
 
-  for(let book of books){
-    const li=document.createElement('li');
-    li.style.backgroundColor=book.alreadyRead? 'green' :'red';
-    const p=document.createElement('p');
-     p.textContent=`${book.title} By ${book.author}`;
-     const image=document.createElement('img');
-     image.src=`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`;
-
+  for (let book of books) {
+    const li = document.createElement('li');
+    li.style.backgroundColor = book.alreadyRead ? 'green' : 'red';
+    const p = document.createElement('p');
+    p.textContent = `${book.title} By ${book.author}`;
+    const image = document.createElement('img');
+    image.src = `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`;
+    image.alt = `${book.title} cover`;
 
     li.appendChild(p);
     li.appendChild(image);
     ulElement.appendChild(li);
   }
   return ulElement;
-
-   
 }
 
 function main() {
@@ -59,7 +57,6 @@ function main() {
       isbn: '978-0201616224',
       alreadyRead: true,
     },
-
   ];
 
   const ulElement = createBookList(myBooks);
