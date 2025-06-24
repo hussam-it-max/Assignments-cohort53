@@ -9,5 +9,5 @@
 | ex1-bookList     |   6    |   -    |   ✓    |
 | ex2-aboutMe      |   4    |   -    |   ✓    |
 | ex3-hijackLogo   |   3    |   -    |   ✓    |
-| ex4-whatsTheTime |   6    |   -    |   ✓    |
+| ex4-whatsTheTime |   5    |   1    |   ✓    |
 | ex5-catWalk      |   5    |   -    |   ✓    |

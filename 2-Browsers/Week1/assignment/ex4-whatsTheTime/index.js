@@ -16,7 +16,7 @@ function addCurrentTime() {
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const seconds = date.getSeconds();
-    const currentTime = `${hours >= 10 ? hours : hours.padStart(2, '0')}:${minutes >= 10 ? minutes : minutes.padStart(2, '0')}:${seconds >= 10 ? seconds : seconds.padStart(2, '0')}${hours > 12 ? 'PM' : 'AM'}`;
+    const currentTime = `${hours >= 10 ? hours : '0' + hours}:${minutes >= 10 ? minutes : '0' + minutes}:${seconds >= 10 ? seconds : '0' + seconds}${hours > 12 ? 'PM' : 'AM'}`;
     console.log(currentTime);
     time.textContent = `${currentTime}`;
   }
