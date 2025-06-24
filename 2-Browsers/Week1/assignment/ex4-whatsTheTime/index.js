@@ -7,22 +7,20 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 2. Have the function execute when it's loading in the browser.
 ------------------------------------------------------------------------------*/
 function addCurrentTime() {
-  const time=document.createElement('h3');
+  const time = document.createElement('h3');
   time.classList.add('clock');
-   document.body.appendChild(time);
+  document.body.appendChild(time);
 
-  function updateTime(){
-  const date=new Date();
-  const hours=date.getHours();
-  const minutes=date.getMinutes();
-  const seconds=date.getSeconds();
-  const currentTime=`${hours>=10?hours:0+hours}:${minutes>=10? minutes:0+minutes}:${seconds>=10?seconds:0+seconds}${hours>12?'PM':'AM'}`;
-  console.log(currentTime);
-  time.textContent=`${currentTime}`;
-  };
+  function updateTime() {
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    const currentTime = `${hours >= 10 ? hours : hours.padStart(2, '0')}:${minutes >= 10 ? minutes : minutes.padStart(2, '0')}:${seconds >= 10 ? seconds : seconds.padStart(2, '0')}${hours > 12 ? 'PM' : 'AM'}`;
+    console.log(currentTime);
+    time.textContent = `${currentTime}`;
+  }
   updateTime();
-  setInterval(updateTime,1000);
-};
-window.addEventListener('load',addCurrentTime );
-
-
+  setInterval(updateTime, 1000);
+}
+window.addEventListener('load', addCurrentTime);
